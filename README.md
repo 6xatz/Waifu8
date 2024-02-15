@@ -160,7 +160,7 @@ while True:
 ## Flowchart | Praktikum 8
 
 <p align="left">
-  <img src="/ss/flowchart.jpg" width="180">
+  <img src="/ss/Flowchart.jpg" width="180">
 </p>
 
 flowchart ini menggunakan **_dictionary_** beserta **_[]_** agar lebih mudah menempatkan **_value_**.
