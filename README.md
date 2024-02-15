@@ -1,22 +1,19 @@
-# Latihan OOP di bahasa python                
+## Mata Kuliah
 
-* Nama          : 6xatz            
-* NIM           :              
-* Kelas         : TI.23.A.5             
-* Mata Kuliah   : Bahasa Pemrograman                 
-----------------------------------                     
-Dalam latihan dasar OOP [`python`](https://www.python.org/) ini, saya menggunakan [`Visual Studio Code`](https://code.visualstudio.com/) sebagai teks editornya.               
+Sebagai tugas praktikum: [8] Bahasa Pemrograman | Universitas Pelita Bangsa.
 
-Buat program sederhana dengan mengaplikasikan penggunaan `class`. Buatlah `class` untuk menampilkan daftar nilai mahasiswa, dengan ketentuan:                
+## Laporan Praktikum
 
-* Method `tambah()` untuk menambah data                
-* Method `tampilkan()` untuk menampilkan data                
-* Method `hapus(nama)` untuk menghapus data berdasarkan nama                
-* Method `ubah(nama)` untuk mengubah data berdasarkan nama               
-  
-gambar flowchrt         
+Buat program sederhana dengan mengaplikasikan penggunaan `class`. Buatlah `class` untuk menampilkan daftar nilai mahasiswa, dengan ketentuan:
 
-Pertama kita mendeklarasikan sebuah `class` Mahasiswa yang didalamnya terdapat `atribut` NIM, Nama, nilai tugas, nilai UTS dan nilai UAS.           
+- Method `tambah()` untuk menambah data
+- Method `tampilkan()` untuk menampilkan data
+- Method `hapus(nama)` untuk menghapus data berdasarkan nama
+- Method `ubah(nama)` untuk mengubah data berdasarkan nama
+
+gambar flowchrt
+
+Pertama kita mendeklarasikan sebuah `class` Mahasiswa yang didalamnya terdapat `atribut` NIM, Nama, nilai tugas, nilai UTS dan nilai UAS.
 
 ```bash
 class mahasiswa:
@@ -26,17 +23,18 @@ class mahasiswa:
         self.tugas = tugas
         self.uts = uts
         self.uas = uas
-```                  
+```
 
-> Jangan lupa, untuk mendeklarasikan sebuah class didalam OOP kita harus gunakan `def__init__` dan juga `self`           
+> Jangan lupa, untuk mendeklarasikan sebuah class didalam OOP kita harus gunakan `def__init__` dan juga `self`
 
-Seperti biasa, deklarasikan satu dictionary kosong sebagai tempat menyimpan data-data yang sudah kita input. Ada 5 list kosong yang nanti isinya yaitu NIM, Nama, nilai tugas, nilai UTS dan nilai UAS.           
+Seperti biasa, deklarasikan satu dictionary kosong sebagai tempat menyimpan data-data yang sudah kita input. Ada 5 list kosong yang nanti isinya yaitu NIM, Nama, nilai tugas, nilai UTS dan nilai UAS.
 
 ```bash
 data = mahasiswa([],[],[],[],[])
 ```
-Kita akan buat beberapa `method` untuk menambahkan, menampilkan, menghapus, mengubah data mahasiswa.         
-Pertama membuat method `tambah()`, method ini berfungsi untuk menambahkan data. Dalam method ini kita menggunakan `append()` supaya data yang terakhir ditambahkan, ada di urutan list paling akhir.             
+
+Kita akan buat beberapa `method` untuk menambahkan, menampilkan, menghapus, mengubah data mahasiswa.  
+Pertama membuat method `tambah()`, method ini berfungsi untuk menambahkan data. Dalam method ini kita menggunakan `append()` supaya data yang terakhir ditambahkan, ada di urutan list paling akhir.
 
 ```bash
 def tambah(self,nim,nama,tugas,uts,uas):
@@ -45,11 +43,12 @@ def tambah(self,nim,nama,tugas,uts,uas):
     data.tugas.append(tugas)
     data.uts.append(uts)
     data.uas.append(uas)
-```            
-Ini tampilan jika kita memanggil method `tambah()` :                 
-ss output         
+```
 
-Membuat method `lihat()`, gunanya untuk menampilkan seluruh data yang sudah kita tambahkan tadi. Kalau tidak ada data sama sekali, maka akan muncul tulisan **TIDAK ADA DATA**. Kita menggunakan `for loop` untuk menampilkan banyaknya data. Nantinya data akan ditampilkan sebanyak n kali.               
+Ini tampilan jika kita memanggil method `tambah()` :  
+ss output
+
+Membuat method `lihat()`, gunanya untuk menampilkan seluruh data yang sudah kita tambahkan tadi. Kalau tidak ada data sama sekali, maka akan muncul tulisan **TIDAK ADA DATA**. Kita menggunakan `for loop` untuk menampilkan banyaknya data. Nantinya data akan ditampilkan sebanyak n kali.
 
 ```bash
 def lihat(self):
@@ -61,11 +60,12 @@ def lihat(self):
          print("    |", self.uts[i], end="")
          print("  |", self.uas[i], " | ", end="")
          print(f'{((self.tugas[i]*30/100) + (self.uts[i]*35/100) + (self.uas[i]*35/100)) :.2f}', " |")
-```               
-Ini tampilan jika kita memanggil method `lihat()` :                 
-ss output     
+```
 
-Membuat method `ubah()` yang fungsinya untuk mengubah data. jika method ini dipanggil, maka data Nama, NIM, nilai tugas, nilai UTS, nilai UAS index nomor - `(no)` akan diubah sesuai dengan inputan dari user. Index ke - `(no)` akan dicari secara otomatis sesuai dengan nama yang ingin diubah oleh user.                
+Ini tampilan jika kita memanggil method `lihat()` :  
+ss output
+
+Membuat method `ubah()` yang fungsinya untuk mengubah data. jika method ini dipanggil, maka data Nama, NIM, nilai tugas, nilai UTS, nilai UAS index nomor - `(no)` akan diubah sesuai dengan inputan dari user. Index ke - `(no)` akan dicari secara otomatis sesuai dengan nama yang ingin diubah oleh user.
 
 ```bash
 def ubah(self,nim,nama,tugas,uts,uas):
@@ -74,11 +74,12 @@ def ubah(self,nim,nama,tugas,uts,uas):
      self.tugas[no] = tugas
      self.uts[no] = uts
      self.uas[no] = uas
-```                         
-Ini tampilan jika kita memanggil method `ubah()` :                 
-ss output                
+```
 
-Terakhir kita buat method `hapus()`. Gunanya adalah menghapus data berdasarkan nama. Kita bisa menggunakan `del` untuk menghapus datanya. Seperti tadi, nomor index list yang akan dihapus disesuaikan dengan inputan dari user. Yaitu index nomor ke - `(no)`.                  
+Ini tampilan jika kita memanggil method `ubah()` :  
+ss output
+
+Terakhir kita buat method `hapus()`. Gunanya adalah menghapus data berdasarkan nama. Kita bisa menggunakan `del` untuk menghapus datanya. Seperti tadi, nomor index list yang akan dihapus disesuaikan dengan inputan dari user. Yaitu index nomor ke - `(no)`.
 
 ```bash
 def hapus(self):
@@ -87,14 +88,15 @@ def hapus(self):
      del self.tugas[no]
      del self.uts[no]
      del self.uas[no]
-```                               
-Ini tampilan jika kita memanggil method `hapus()` :                 
-ss output      
+```
 
-Kita sudah mendeklarasikan class, instance class dan juga methods. Sekarang semua itu bisa dilihat dengan diagram seperti ini :               
-ss output          
+Ini tampilan jika kita memanggil method `hapus()` :  
+ss output
 
-Dan untuk menjalankan program dan bisa memanggil masing-masing methods, seperti biasa kita menggunakan `while loop` yang didalamnya ada `conditional` seperti ini.             
+Kita sudah mendeklarasikan class, instance class dan juga methods. Sekarang semua itu bisa dilihat dengan diagram seperti ini :  
+ss output
+
+Dan untuk menjalankan program dan bisa memanggil masing-masing methods, seperti biasa kita menggunakan `while loop` yang didalamnya ada `conditional` seperti ini.
 
 ```bash
 while True:
@@ -102,10 +104,10 @@ while True:
     if menu == "t" or menu == "T":
        print("\nTambah Data")
        data.tambah(
-           input("Masukkan NIM : "), 
-           input("Masukkan Nama : "), 
-           int(input("Nilai Tugas : ")), 
-           int(input("Nilai UTS : ")), 
+           input("Masukkan NIM : "),
+           input("Masukkan Nama : "),
+           int(input("Nilai Tugas : ")),
+           int(input("Nilai UTS : ")),
            int(input("Nilai UAS : "))
            )
        print("\nData berhasil ditambahkan")
@@ -153,6 +155,17 @@ while True:
 
     else:
         print("\nPerintah yang dimasukkan salah!\n")
-```                                 
+```
 
-Sekian terimakasih.
+## Flowchart | Praktikum 8
+
+<p align="left">
+  <img src="/ss/flowchart.jpg" width="180">
+</p>
+
+flowchart ini menggunakan **_dictionary_** beserta **_[]_** agar lebih mudah menempatkan **_value_**.
+sehingga **_append_** dapat di-fungsikan dengan lebih mudah.
+
+## Documentation
+
+All associated resources. are licensed under the [MIT License](https://mit-license.org/).
